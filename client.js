@@ -3,10 +3,8 @@ const net = require('net');
 
 const connect = function () {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: "8000",
-    //host: "165.227.47.243",
-    //port: "50541",
+    host: "165.227.47.243",
+    port: "50541",
   });
 
   // interpret incoming data as text
@@ -15,11 +13,12 @@ const connect = function () {
   conn.on("connect", () => {
    // console.log("Wohoo we're connected!")
     // code that does something when the connection is first established
-console.log('Successfully connected to game server');
-conn.write('Name: DHS');
-
-//conn.write('Wohoo you\re connected!')
-});
+  
+    console.log('Successfully connected to game server');
+    conn.write('Name: DHS');
+    //conn.write('Move: up');
+    console.log('Done writing name');
+  });
   //);
 
   return conn;
